@@ -1,0 +1,9 @@
+# Kredensial lokal dan produksi, jangan pernah di-commit
+config/config.php
+
+# File sistem dan editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log

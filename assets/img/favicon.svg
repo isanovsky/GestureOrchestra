@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+  <!-- Logo GestureOrchestra: not balok coretan tangan. Gambar orisinal kelompok. -->
+  <circle cx="14" cy="29" r="7" fill="#E4572E" transform="translate(1.5 1)"/>
+  <circle cx="30" cy="25" r="6" fill="#E9A23B" transform="translate(1.5 1)"/>
+  <g fill="none" stroke="#3B2A1E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="14" cy="29" rx="7" ry="6" transform="rotate(-18 14 29)"/>
+    <ellipse cx="30" cy="25" rx="6" ry="5" transform="rotate(-18 30 25)"/>
+    <path d="M20.5 27 L20 7.5 L35.5 4 L35.8 23"/>
+    <path d="M20.2 12.5 L35.6 9"/>
+  </g>
+</svg>

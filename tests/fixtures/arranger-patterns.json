@@ -1,0 +1,25 @@
+{
+    "_catatan": "Kasus pola arranger. Dijalankan oleh uji PHP (includes/arranger.php) dan uji JS (assets/js/arranger-pattern.js); keduanya harus memberi jumlah kejadian dan pesan error yang sama.",
+    "cases": [
+        { "track": "drum", "length": 4, "text": "0 KICK\n1 SNARE 0.8\n0.5 hihat 0.3", "events": 3, "errors": [] },
+        { "track": "drum", "length": 4, "text": "# komentar saja\n\n0 KDUT # dut\n4/3 KTAK", "events": 2, "errors": [] },
+        { "track": "drum", "length": 4, "text": "4 KICK", "events": 0, "errors": ["Baris 1: ketukan 4 di luar bagian (panjang 4 ketukan, jadi 0 sampai di bawah 4)."] },
+        { "track": "drum", "length": 4, "text": "0 BOOM", "events": 0, "errors": ["Baris 1: kode drum \"BOOM\" tidak dikenal. Pilihan: KICK, SNARE, HIHAT, OHAT, RIM, TOM, CRASH, CYMBAL, KDUT, KTAK, TAMB."] },
+        { "track": "drum", "length": 4, "text": "0 KICK 1.5", "events": 0, "errors": ["Baris 1: velocity \"1.5\" harus lebih dari 0 sampai 1 (contoh: 0.6)."] },
+        { "track": "drum", "length": 4, "text": "0 KICK 0", "events": 0, "errors": ["Baris 1: velocity \"0\" harus lebih dari 0 sampai 1 (contoh: 0.6)."] },
+        { "track": "drum", "length": 4, "text": "0 KICK 0.5 2", "events": 0, "errors": ["Baris 1: drum ditulis <ketukan> <KODE> [velocity]."] },
+        { "track": "drum", "length": 4, "text": "satu KICK", "events": 0, "errors": ["Baris 1: ketukan \"satu\" bukan angka (contoh: 0, 1.5, 4/3)."] },
+        { "track": "drum", "length": 4, "text": "1,5 KICK", "events": 0, "errors": ["Baris 1: ketukan \"1,5\" bukan angka (contoh: 0, 1.5, 4/3)."] },
+        { "track": "drum", "length": 4, "text": "1/0 KICK", "events": 0, "errors": ["Baris 1: ketukan \"1/0\" bukan angka (contoh: 0, 1.5, 4/3)."] },
+        { "track": "drum", "length": 4, "text": "2", "events": 0, "errors": ["Baris 1: isi kejadian belum ditulis."] },
+        { "track": "bass", "length": 8, "text": "0 R 2 0.9\n2 5- 1.5\n3.5 8 0.5 0.6\n4 3", "events": 4, "errors": [] },
+        { "track": "bass", "length": 4, "text": "0 R35", "events": 0, "errors": ["Baris 1: nada bass \"R35\" harus satu dari R, 3, 5, 8 (boleh diakhiri -)."] },
+        { "track": "bass", "length": 4, "text": "0 R 0", "events": 0, "errors": ["Baris 1: durasi \"0\" harus angka lebih dari 0 sampai 32."] },
+        { "track": "bass", "length": 4, "text": "0 R 33", "events": 0, "errors": ["Baris 1: durasi \"33\" harus angka lebih dari 0 sampai 32."] },
+        { "track": "chord", "length": 4, "text": "0 R35 1 0.6\n0.5 5\n1 r358-\n2 358 2", "events": 4, "errors": [] },
+        { "track": "chord", "length": 4, "text": "0 R35 1 0.6 9", "events": 0, "errors": ["Baris 1: ditulis <ketukan> <nada> [durasi] [velocity]."] },
+        { "track": "chord", "length": 4, "text": "0 RR5", "events": 0, "errors": ["Baris 1: nada akor \"RR5\" harus gabungan R, 3, 5, 8 tanpa pengulangan (boleh diakhiri -)."] },
+        { "track": "chord", "length": 4, "text": "0 R7", "events": 0, "errors": ["Baris 1: nada akor \"R7\" harus gabungan R, 3, 5, 8 tanpa pengulangan (boleh diakhiri -)."] },
+        { "track": "chord", "length": 4, "text": "0 R35\n9 R35\n1 X", "events": 1, "errors": ["Baris 2: ketukan 9 di luar bagian (panjang 4 ketukan, jadi 0 sampai di bawah 4).", "Baris 3: nada akor \"X\" harus gabungan R, 3, 5, 8 tanpa pengulangan (boleh diakhiri -)."] }
+    ]
+}

@@ -1,0 +1,16 @@
+# Jangan tampilkan daftar isi folder.
+Options -Indexes
+
+# Blokir akses langsung ke folder internal (termasuk tests/). Folder-folder ini juga punya
+# .htaccess sendiri (Require all denied) sebagai lapisan kedua.
+RedirectMatch 403 (^|/)(config|includes|database|tests)(/|$)
+
+# Blokir file tersembunyi seperti .git dan .htaccess.
+RedirectMatch 403 /\.(?!well-known)
+
+DirectoryIndex index.php
+
+# Halaman 404 yang rapi. Path dihitung dari akar domain:
+#   InfinityFree (aplikasi langsung di htdocs): /404.php
+#   XAMPP di htdocs/gestureorchestra          : /gestureorchestra/404.php
+ErrorDocument 404 /404.php
